@@ -1,0 +1,15 @@
+{
+  "name": "available-permissions-extractor",
+  "version": "1.0.0",
+  "description": "Extracts permissions from attributes embedded in source files, usually HTML documents",
+  "main": "extract-available-permissions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ricardo Pena",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "node-dir": "0.1.17"
+  }
+}
