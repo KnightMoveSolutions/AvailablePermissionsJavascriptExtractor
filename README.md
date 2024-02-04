@@ -37,6 +37,8 @@ extracted by this script as well.
 </div>
 ```
 
+The `extract-available-permissions-test-file.html` contains an example permission in the format above. 
+
 ## Output
 
 Permissions extracted from files will be placed into the `available-permissions.json` file. Repeat executions 
@@ -47,9 +49,21 @@ remove it unless the script is run from scratch each time (recommended practice 
 
 ## Test the Script 
 
-Open PowerShell and run
+### Pre-Requisites
 
-  `PS c:\somewhere> node .\extract-available-permissions.js`
+You should be able to run `node` and `npm` in your terminal on your machine (bash, PowerShell, whatever)
+
+### Step 1
+
+Run installation
+
+  `npm install`
+
+### Step 2
+
+Execute
+
+  `node .\extract-available-permissions.js`
 
 It will pull permissions out of the following files
 
