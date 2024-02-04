@@ -36,15 +36,17 @@ remove it unless the script is run from scratch each time (recommended practice 
 
 Open PowerShell and run
 
-  PS c:\somewhere> node .\extract-available-permissions.js
+  `PS c:\somewhere> node .\extract-available-permissions.js`
 
 It will pull permissions out of the following files
 
+```
   extract-available-permissions-test-file.html
   extract-available-permissions-test-file.ts
+```
 
 And put them into this file
 
-  available-permissions.json
+  `available-permissions.json`
 
 Enjoy!
