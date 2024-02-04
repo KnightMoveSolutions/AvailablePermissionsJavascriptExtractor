@@ -1,12 +1,13 @@
 # Available Permissions Javascript Extractor script
 
 This is a DevOps script that can be used to extract available permissions from `.html`, `.js`, and `.ts` files 
-in the current directory recursively.
+in the current directory recursively. The output can then be used as a source of the available permissions 
+coded into the front-end application. Backend RBAC systems can then use this info for Role-Based Access Control (RBAC).
 
 Permissions in files are expected to be in the following format:
 
 ```javascript
-var somePermission = {
+const somePermission = {
     id: 'unique-id-here-123abc',
     name: 'Super Feature',
     description: 'This is a super feature',
@@ -15,7 +16,17 @@ var somePermission = {
 };
 ```
 
-The `extract-available-permissions-test-file.ts` contains an example permission. 
+## Rules
+
+The rules for the format above are
+
+* The permission name must end with the word "Permission" but it can start with anything in any case (i.e. camel/Pascal/etc)
+* Whether it is a `const`, a `var`, or a `let` is irrelevant
+* It must be a valid javascript object with curly braces as the block
+* It must have the `id` property and it should be a unique value
+* The other properties are standard and will be updated by the script if any changes are found after repeated executions
+
+The `extract-available-permissions-test-file.ts` contains an example permission in the format above. 
 
 Permissions can also be embedded in `html` attributes (thought not recommended) as shown below and they will be 
 extracted by this script as well. 
@@ -25,6 +36,8 @@ extracted by this script as well.
     Some securable content
 </div>
 ```
+
+## Output
 
 Permissions extracted from files will be placed into the `available-permissions.json` file. Repeat executions 
 of the file will catch updates if the identifier remains the same. Otherwise, if there is an identifier that 
