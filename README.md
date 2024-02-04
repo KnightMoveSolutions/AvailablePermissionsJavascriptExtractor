@@ -26,7 +26,7 @@ The rules for the format above are
 * It must have the `id` property and it should be a unique value
 * The other properties are standard and will be updated by the script if any changes are found after repeated executions
 
-The `extract-available-permissions-test-file.ts` contains an example permission in the format above. 
+The `extract-available-permissions-test-file.ts` file contains an example permission in the format above. 
 
 Permissions can also be embedded in `html` attributes (thought not recommended) as shown below and they will be 
 extracted by this script as well. 
@@ -37,15 +37,15 @@ extracted by this script as well.
 </div>
 ```
 
-The `extract-available-permissions-test-file.html` contains an example permission in the format above. 
+The `extract-available-permissions-test-file.html` file contains an example permission in the format above. 
 
 ## Output
 
 Permissions extracted from files will be placed into the `available-permissions.json` file. Repeat executions 
 of the file will catch updates if the identifier remains the same. Otherwise, if there is an identifier that 
-does not exist in the `available-permissions.json` then it will create a new permission for it. Once an identifier
-is used for a permission, do not repeat it for another permission. Also, once a permission is added, do not 
-remove it unless the script is run from scratch each time (recommended practice in cd pipeline).
+does not exist in the `available-permissions.json` file then it will create a new permission for it. Once an 
+identifier is used for a permission, do not repeat it for another permission. Also, once a permission is added, 
+do not remove it unless the script is run from scratch each time (recommended practice in cd pipeline).
 
 ## Test the Script 
 
