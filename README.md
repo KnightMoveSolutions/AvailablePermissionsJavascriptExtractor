@@ -5,7 +5,7 @@ in the current directory recursively.
 
 Permissions in files are expected to be in the following format:
 
-```
+```javascript
 var somePermission = {
     id: 'unique-id-here-123abc',
     name: 'Super Feature',
@@ -20,7 +20,7 @@ The `extract-available-permissions-test-file.ts` contains an example permission.
 Permissions can also be embedded in `html` attributes (thought not recommended) as shown below and they will be 
 extracted by this script as well. 
 
-```
+```html
 <div app-permission="{ 'id': 'unique-id-here-123abc', 'name': 'Cool Feature A', 'description': 'This is a cool feature A', 'category': 'My Cool Features' }">
     Some securable content
 </div>
@@ -48,5 +48,31 @@ It will pull permissions out of the following files
 And put them into this file
 
   `available-permissions.json`
+
+In this case, the permissions in the test files will end up in the output file above like this:
+
+```json
+[
+  {
+    "id": "C989BFF5-5833-4451-B2EF-47D442F7AD61",
+    "name": "Super Feature",
+    "description": "This is a super feature",
+    "category": "My Cool Features",
+    "parentCategory": ""
+  },
+  {
+    "id": "A106CF9A-285F-4CA5-B982-63DD1C6539F7",
+    "name": "Cool Feature A",
+    "description": "This is a cool feature A",
+    "category": "My Cool Features"
+  },
+  {
+    "id": "8753DB3C-96AB-424D-9CFF-013C7CCDDBF1",
+    "name": "Another Cool Feature X",
+    "description": "This is another cool feature X",
+    "category": "My Cool Features"
+  }
+]
+```
 
 Enjoy!
